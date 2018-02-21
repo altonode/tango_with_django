@@ -1,0 +1,20 @@
+{% extends "rango/base.html" %}
+
+{% load bootstrap_toolkit %}
+{% block body_block %}
+	<link href=""http://v4-alpha.getbootstrap.com/examples/signin/signin.css"
+	  rel="strylesheet">
+	<div class="jumbotron">
+	  <h1 class="display-3">Login</h1>
+	</div>
+	<form class="form-signin" role="form" method="post" action=".">
+		{% csrf_token %}
+		{{ form|as_bootstrap }}
+	  <button class="btn btn-lg btn-primary btn" type="submit"
+		  value="Submit" />Sign in</button>
+	</form>
+	<p>
+		Not a member?
+	  <a href="{% url 'registration_register' %}">Register</a>
+	</p>
+{% endblock %}
